@@ -1,7 +1,7 @@
 ![home-index](https://github.com/eusoupedroo/assistai/assets/43014726/e51d46bb-f5b8-4ad0-bc2d-c08b0b03bbfe)
 ![cast-movie](https://github.com/eusoupedroo/assistai/assets/43014726/9eb89b36-9ba5-4902-88f7-919cbcf2e333)
-![cast-movie-mobile](https://github.com/eusoupedroo/assistai/assets/43014726/2ba4b87c-4cff-4ca6-81db-1a0097367036)
 ![home-index-mobile](https://github.com/eusoupedroo/assistai/assets/43014726/2b087326-4d41-40ec-aaca-dc70bc9798e9)
+![cast-movie-mobile](https://github.com/eusoupedroo/assistai/assets/43014726/2ba4b87c-4cff-4ca6-81db-1a0097367036)
 
 # ASSISTAI - WEBSITE THAT SHOWS THE STREAMING AVAILABLE IN YOUR SEARCH MOVIE
 
