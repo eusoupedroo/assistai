@@ -15,6 +15,26 @@ body {
     font-family: 'Cairo', sans-serif;
 }
 
+/* Information Version */
+.version-information {
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--purple-color);
+    color: var(--text-color);
+}
+
+.version-information span{ 
+    font-size: 1em;
+}
+
+.name-project {
+    font-weight: bold;
+    margin-right: 2%;
+}
+
+/* Input */
 #searchInput {
     background:transparent;
     color: var(--text-color);
