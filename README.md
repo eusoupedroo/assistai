@@ -15,7 +15,7 @@ Well, this happened to me recently, and thinking about it, I created 'AssistAI' 
 | Technologies | Function |
 | ----------- | ----------- |
 | HMTL & CSS | These languages was used to make the front-end of the project |
-| JavaScript & Jquery | Used to make the ajax calls, this is important to add one more click in the url if the user click on the website, this way, i can make one ranking of the most populars websites|
+| JavaScript | Used to make the ajax calls, this is important to add one more click in the url if the user click on the website, this way, i can make one ranking of the most populars websites|
 
 ### Observations Of This Project:
 This is a 100% front-end project consuming an external API. It is worth remembering that this project is in its initial demonstration version and I am gradually adding improvements. Soon, for example, we will have the ability to search for series as well and add more information such as trailer videos, release date and much more.
