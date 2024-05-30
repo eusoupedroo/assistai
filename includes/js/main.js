@@ -52,7 +52,9 @@ async function displayResults(movies) {
     resultsContainer.innerHTML = '';
 
     if (movies.length === 0) {
-        resultsContainer.innerHTML = '<p>No movies found.</p>';
+        resultsContainer.innerHTML = '<p>Nenhum filme foi encontrado.</p>'; 
+        const castContainer = document.querySelector('.cast-information');
+        castContainer.innerHTML = '';
         return;
     }
 
@@ -61,6 +63,7 @@ async function displayResults(movies) {
     createCard(firstMovie, providers);
     fetchCast(firstMovie.id);
 }
+
 
 async function getProviders(movieId) {
     try {
