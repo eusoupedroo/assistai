@@ -82,6 +82,7 @@ p { font-size: 0.90em; }
 
 
 .notice-news-card-title { 
+    font-weight: bold;
     font-size: 1.25em;
 }
 
