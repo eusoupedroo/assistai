@@ -88,14 +88,14 @@ async function getProviders(movieId) {
 
 async function createCard(movie, providers) {
     const resultsContainer = document.querySelector('.horizontal-card-information');
-
+    const titleMovie = movie.title || movie.name;
     const description = movie.overview;
     const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
     const releaseDate = new Date(movie.release_date || movie.first_air_date).toLocaleDateString('pt-BR', {
         day: 'numeric',
         month: 'long',
         year: 'numeric'
-    }); // Formata a data no padrão brasileiro
+    });
 
     let providerContent = '';  
 
@@ -128,6 +128,7 @@ async function createCard(movie, providers) {
     const cardHTML = `
         <div class="hero-slide-item-content" style="background-image: url('${imageUrl}'); width: 100%;">
             <div class="item-content-wraper">
+                <div class="item-content-title top-down delay-4 mt-4">${titleMovie}</div>
                 <div class="item-content-description top-down delay-4 mt-4">${description}</div>
                 <div class="item-content-release-date top-down delay-5 mt-2">Data de lançamento: ${releaseDate}.</div> 
                 <div class="item-action top-down delay-6">
