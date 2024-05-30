@@ -83,12 +83,17 @@ async function getProviders(movieId) {
     }
 }
 
-function createCard(movie, providers) {
+async function createCard(movie, providers) {
     const resultsContainer = document.querySelector('.horizontal-card-information');
 
-    const title = movie.title || movie.name;
     const description = movie.overview;
     const imageUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+    const releaseDate = new Date(movie.release_date || movie.first_air_date).toLocaleDateString('pt-BR', {
+        day: 'numeric',
+        month: 'long',
+        year: 'numeric'
+    }); // Formata a data no padrão brasileiro
+
     let providerContent = '';  
 
     if (providers.name) {
@@ -97,26 +102,69 @@ function createCard(movie, providers) {
         providerContent = `
             <button type="button" class="btn btn-light providers-btn mt-4">
                 ${providerName}
-                ${providerLogo ? `<img src="${providerLogo}" alt="Provider Logo" class="ml-4" />` : ''} <!-- Renderiza o logotipo do provedor somente se estiver disponível -->
+                ${providerLogo ? `<img src="${providerLogo}" alt="Provider Logo" class="ml-4" />` : ''}
             </button>
         `;
     } else { 
         providerContent = '<p class="mt-4">Informações não disponíveis</p>';
     }
 
+    const recommendedMovies = await getRecommendedMovies(movie.id);
+
+    const recommendedHTML = recommendedMovies.slice(0, 2).map(recommended => {
+        const recommendedImageUrl = `https://image.tmdb.org/t/p/w500${recommended.poster_path}`;
+        return `
+            <li class="recommended-item">
+                <img src="${recommendedImageUrl}" alt="${recommended.title}">
+                <span class="recommended-item-title">${recommended.title}</span>
+                <span class="recommended-item-providers">${recommended.providers}</span>
+            </li>
+        `;
+    }).join('');
+
     const cardHTML = `
-        <div class="hero-slide-item-content" style="background-image: url('${imageUrl}');">
+        <div class="hero-slide-item-content" style="background-image: url('${imageUrl}'); width: 100%;">
             <div class="item-content-wraper">
-                <div class="item-content-title top-down ">${title}</div>
                 <div class="item-content-description top-down delay-4 mt-4">${description}</div>
+                <div class="item-content-release-date top-down delay-5 mt-2">Data de lançamento: ${releaseDate}.</div> 
                 <div class="item-action top-down delay-6">
                     ${providerContent}
                 </div>
             </div>
         </div>
+        
+        <div class="recommended-horizontal-card-information w-100">
+            <h1 class='notice-news-card-title'>Você também pode gostar de:</h1>
+            <ul class="recommended-list">
+                ${recommendedHTML}
+            </ul>
+        </div>
     `;
+
     resultsContainer.insertAdjacentHTML('beforeend', cardHTML);
+    
+    document.querySelectorAll('.recommended-item').forEach(item => {
+        const titleElement = item.querySelector('.recommended-item-title');
+        item.insertAdjacentElement('afterbegin', titleElement);
+    });
 }
+
+
+async function getRecommendedMovies(movieId) {
+    try {
+        const response = await fetch(`${BASE_URL}/movie/${movieId}/recommendations?api_key=${API_KEY}&language=pt-BR`);
+        if (!response.ok) {
+            throw new Error('Error fetching recommended movies');
+        }
+        const data = await response.json();
+        return data.results;
+    } catch (error) {
+        console.error('Error:', error);
+        return [];
+    }
+}
+
+
 
 async function fetchCast(movieId) {
     try {

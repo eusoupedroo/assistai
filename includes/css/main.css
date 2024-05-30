@@ -23,7 +23,7 @@ p { font-size: 0.90em; }
     display: flex;
     justify-content: center;
     align-items: center;
-    background: linear-gradient(90deg, rgba(111, 50, 253, 1) 0%, rgba(111, 50, 253, 1) 35%, rgba(0, 212, 255, 1) 100%);
+    background: linear-gradient(90deg, rgba(111, 50, 253, 1) 0%, rgb(137, 86, 255) 35%, rgba(0, 212, 255, 1) 100%);
     color: var(--text-color);
 }
 
@@ -36,7 +36,7 @@ p { font-size: 0.90em; }
     margin-right: 2%;
 }
 
-/* Input */
+/* Input Search */
 #searchInput {
     background:transparent;
     color: var(--text-color);
@@ -80,8 +80,9 @@ p { font-size: 0.90em; }
     color: var(--text-color); 
 }
 
-.notice-news-card-title {
-    font-weight: bold;
+
+.notice-news-card-title { 
+    font-size: 1.25em;
 }
 
 .news-container {
@@ -152,10 +153,10 @@ p { font-size: 0.90em; }
     max-height: 30px;
     border-radius: 5px;
 }
-
-/* Cast Information */
+ 
 .cast-information {
     margin-top: 20px;
+    width: calc(100% - 20px); 
 }
 
 .cast-grid {
@@ -167,7 +168,7 @@ p { font-size: 0.90em; }
 .cast-member {
     display: flex;
     align-items: center;
-    background: #1c1c1c;
+    background: var(--accent-color);
     padding: 2%;
     border-radius: 5px;
 }
@@ -238,6 +239,54 @@ p { font-size: 0.90em; }
 .project-name {
     font-weight: bold;
     margin-right: 2%;
+}
+
+/* Recommended */
+.recommended-horizontal-card-information {
+    width: 100%;
+    max-width: 900px;
+    margin-top: 20px;
+}
+
+.recommended-list {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    list-style: none;
+    width: 100%;
+}
+
+.recommended-item {
+    position: relative;
+    overflow: hidden; 
+    margin-right: 1%;
+}
+
+.recommended-item img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.recommended-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    background-image: linear-gradient(to top, rgba(0, 0, 0, 0.98), transparent);
+}
+
+.recommended-item .recommended-item-title {
+    position: absolute;
+    bottom: 10px; 
+    left: 10px; 
+    color: var(--text-color);
+    font-size: 14px;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    z-index: 1; 
 }
 
 /* Responsive Layout */
