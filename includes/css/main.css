@@ -69,17 +69,16 @@ p { font-size: 0.90em; }
 
 /* News Card */
 .news-card { 
-    width: 100%;
+width: 100%;
     max-width: 900px;
     height: 50%;
     padding: 10px;
-    background: url('../img/bg-card-news.png') no-repeat center center;
-    background-size: cover; 
+    background: linear-gradient(90deg, rgba(111, 50, 253, 1) 0%, rgb(137, 86, 255) 35%, rgba(0, 212, 255, 1) 100%);
+    background-size: cover;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: var(--text-color); 
+    color: var(--text-color);
 }
-
 
 .notice-news-card-title { 
     font-weight: bold;
