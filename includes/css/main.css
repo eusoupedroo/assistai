@@ -129,11 +129,10 @@ width: 100%;
     z-index: 1;
 }
 
- 
-
 .searchOptions {    
     margin-top: 2%;
     width: 100%;
+    margin-left: 3%;
 }
 
 .btn-outline-white {
