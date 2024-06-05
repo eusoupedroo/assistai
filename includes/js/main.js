@@ -119,8 +119,7 @@ async function createCard(movie, providers) {
         return `
             <li class="recommended-item">
                 <img src="${recommendedImageUrl}" alt="${recommended.title}">
-                <span class="recommended-item-title">${recommended.title}</span>
-                <span class="recommended-item-providers">${recommended.providers}</span>
+                <span class="recommended-item-title">${recommended.title}</span> 
             </li>
         `;
     }).join('');

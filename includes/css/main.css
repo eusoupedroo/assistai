@@ -1,7 +1,7 @@
 /* Cores  */
 :root {
     --background-color: #0e0e0e;
-    --text-color: #ffffff;
+    --white-color: #ffffff;
     --accent-color: #181818;
     --accent-hover-color: #333333;
     --border-color: #dddddd;
@@ -11,20 +11,22 @@
 /* Estilos */
 body {
     background: var(--background-color);
-    color: var(--text-color);
+    color: var(--white-color);
     font-family: 'Cairo', sans-serif;
 }
 
 p { font-size: 0.90em; }
 
+h1, h2 { font-size: 1.5em; }
+
 /* Information Version */
 .version-information {
-    padding: 1%;
+    padding: 0.50em;
     display: flex;
     justify-content: center;
     align-items: center;
     background: linear-gradient(90deg, rgba(111, 50, 253, 1) 0%, rgb(137, 86, 255) 35%, rgba(0, 212, 255, 1) 100%);
-    color: var(--text-color);
+    color: var(--white-color);
 }
 
 .version-information span{ 
@@ -39,7 +41,7 @@ p { font-size: 0.90em; }
 /* Input Search */
 #searchInput {
     background:transparent;
-    color: var(--text-color);
+    color: var(--white-color);
 }
 
 /* Container */
@@ -68,19 +70,19 @@ p { font-size: 0.90em; }
 }
 
 /* News Card */
-.news-card { 
-width: 100%;
+.warning-cards { 
+    width: 100%;
     max-width: 900px;
     height: 50%;
     padding: 10px;
-    background: linear-gradient(90deg, rgba(111, 50, 253, 1) 0%, rgb(137, 86, 255) 35%, rgba(0, 212, 255, 1) 100%);
+    background: linear-gradient(90deg, rgb(111 50 253) 0%, rgb(137, 86, 255) 35%, rgb(111 50 253) 100%);
     background-size: cover;
     border-radius: 5px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    color: var(--text-color);
+    color: var(--white-color);
 }
 
-.notice-news-card-title { 
+.notice-warning-cards-title { 
     font-weight: bold;
     font-size: 1.25em;
 }
@@ -114,9 +116,9 @@ width: 100%;
     overflow: hidden;
     padding: 20px;
     height: 500px;
-    color: var(--text-color);
+    color: var(--white-color);
     width: 100%;
-    border: 1px solid var(--text-color);
+    border: 1px solid var(--white-color);
 }
 
 .hero-slide-item-content::before {
@@ -147,7 +149,7 @@ width: 100%;
 .item-content-description,
 .movie-infos,
 .providers-btn span {
-    color: var(--text-color);
+    color: var(--white-color);
 }
 
 /* Providers Button */
@@ -211,7 +213,7 @@ width: 100%;
     cursor: pointer;
     display: flex;
     align-items: center;
-    color: var(--text-color);
+    color: var(--white-color);
 }
 
 .suggestion img {
@@ -289,11 +291,24 @@ width: 100%;
     position: absolute;
     bottom: 10px; 
     left: 10px; 
-    color: var(--text-color);
+    color: var(--white-color);
     font-size: 1.2em;
     font-weight: bold;
     text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
     z-index: 1; 
+}
+
+.search-options {
+    width: 100%;
+    margin-top: 2%;
+}   
+
+.btn-outline {
+    background: transparent;
+    color: var(--white-color);
+    border: 1px solid var(--white-color);    
+    padding: 1%;
+    border-radius: 5px;
 }
 
 /* Responsive Layout */
